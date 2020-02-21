@@ -14,7 +14,7 @@
 							<div class="text-muted"> {{ selfTodos.detail }} </div>
 							<div class="text-muted">{{ selfTodos.deadline }}まで</div>
 						</div>
-						<div class="col-md-2"><button @click="del(key)">削除</button></div>
+						<div class="col-md-2"><button @click="del(selfTodos.id)">削除</button></div>
           </li>
 				</ul>
 			</div>

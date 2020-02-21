@@ -13,7 +13,7 @@
 							<div class="text-muted"> {{ selfBuys.categoly }} </div>
 							<div class="text-muted">{{ selfBuys.deadline }}まで</div>
 						</div>
-						<div class="col-md-2"><button @click="del(key)">削除</button></div>
+						<div class="col-md-2"><button @click="del(selfBuys.id)">削除</button></div>
           </li>
 				</ul>
 			</div>
@@ -122,7 +122,7 @@ export default {
       console.log(data)
 		},
 		del (key) {
-			firebase.database().ref('buy').remove()
+			firebase.database().ref('buy').child(key).remove()
 		},
 		getSelf () {
 			firebase.database().ref('buy/').on('value', snapshot => {
